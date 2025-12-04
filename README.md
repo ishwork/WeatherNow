@@ -1,8 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeatherNow
+
+A real-time weather application built with Next.js 16 App Router that provides accurate weather information for cities worldwide. The app features automatic location detection, city search functionality, and a beautiful dark/light theme interface.
+
+## Features
+
+- **Real-time Weather Data**: Get current weather information powered by OpenWeatherMap API
+- **Auto Location Detection**: Automatically detects your location and shows local weather
+- **City Search**: Search for weather information in any city worldwide
+- **Dark/Light Theme**: Toggle between dark and light modes
+- **Responsive Design**: Fully responsive design that works on all devices
+- **Redux Toolkit Integration**: Efficient state management with RTK Query for API calls
+- **Type-Safe**: Built with TypeScript for better development experience
+- **Modern UI**: Clean and intuitive interface with Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- OpenWeatherMap API key (get it free from [OpenWeatherMap](https://openweathermap.org/api))
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone git@github.com:ishwork/WeatherNow.git
+cd WeatherNow
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Create a `.env.local` file in the root directory and add your OpenWeatherMap API key:
+
+```env
+NEXT_PUBLIC_WEATHER_API_KEY=your_api_key_here
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +56,39 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Built With
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js 16](https://nextjs.org/)** - React framework with App Router
+- **[React 19](https://react.dev/)** - UI library
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[Redux Toolkit](https://redux-toolkit.js.org/)** - State management
+- **[RTK Query](https://redux-toolkit.js.org/rtk-query/overview)** - Data fetching and caching
+- **[Tailwind CSS](https://tailwindcss.com/)** - Styling
+- **[OpenWeatherMap API](https://openweathermap.org/api)** - Weather data
 
-## Learn More
+This project uses RTK Query for **client-side data fetching** that depends on client-side interactions (e.g. typing city names in the search input, users allowing location access).
 
-To learn more about Next.js, take a look at the following resources:
+- **Automatic Caching**: Reduces unnecessary API calls by caching responses for 2 minutes in the browser, improving performance and reducing API usage
+- **Built-in Loading States**: Automatically manages `isLoading`, `isFetching`, and `isError` states without additional boilerplate
+- **Optimized Re-renders**: Only re-renders components when their specific data changes
+- **Simplified Code**: Eliminates the need for manual `useEffect`, `useState`, and error handling logic
+- **Request Deduplication**: Multiple components requesting the same data trigger only one network request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Check out the live demo: [WeatherNow](https://quickweathercheck.netlify.app)
 
-## Deploy on Vercel
+## 📝 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Acknowledgments
+
+- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+- Icons and design inspiration from various sources
