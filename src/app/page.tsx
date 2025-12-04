@@ -5,7 +5,7 @@ import { FAVICON_ICON, WEATHER_IMAGE } from '@/constants';
 import HomePageWeather from '@/components/HomePageWeather';
 
 export const metadata: Metadata = {
-  title: 'Weather information for City',
+  title: 'WeatherNow',
   description: 'Search for weather information by city name',
   openGraph: {
     title: 'Weather information for City',
