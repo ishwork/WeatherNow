@@ -13,6 +13,10 @@ A real-time weather application built with Next.js 16 App Router that provides a
 - **Type-Safe**: Built with TypeScript for better development experience
 - **Modern UI**: Clean and intuitive interface with Tailwind CSS
 
+## 🌐 Live Demo
+
+Check out the live demo: [WeatherNow](https://quickweathercheck.netlify.app)
+
 ## Getting Started
 
 ### Prerequisites
@@ -75,10 +79,6 @@ This project uses RTK Query for **client-side data fetching** that depends on cl
 - **Optimized Re-renders**: Only re-renders components when their specific data changes
 - **Simplified Code**: Eliminates the need for manual `useEffect`, `useState`, and error handling logic
 - **Request Deduplication**: Multiple components requesting the same data trigger only one network request
-
-## 🌐 Live Demo
-
-Check out the live demo: [WeatherNow](https://quickweathercheck.netlify.app)
 
 ## 📝 Available Scripts
 
