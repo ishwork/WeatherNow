@@ -7,7 +7,7 @@ import CityNotFound from './CityNotFound';
 import LoadingSpinner from './LoadingSpinner';
 import WeatherCard from './WeatherCard';
 
-const WeatherApp = ({ initialCity }: { initialCity?: string }) => {
+const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [city, setCity] = useState(initialCity || '');
@@ -20,9 +20,9 @@ const WeatherApp = ({ initialCity }: { initialCity?: string }) => {
   // Update document title when weather data changes
   useEffect(() => {
     if (data) {
-      document.title = `${data.name}, ${data.sys.country} - Weather App`;
+      document.title = `${data.name}, ${data.sys.country} - WeatherNow`;
     } else if (!searchCity) {
-      document.title = 'Weather App';
+      document.title = 'WeatherNow';
     }
   }, [data, searchCity]);
 
@@ -117,4 +117,4 @@ const WeatherApp = ({ initialCity }: { initialCity?: string }) => {
   );
 };
 
-export default WeatherApp;
+export default SearchPageWeather;
