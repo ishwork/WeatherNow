@@ -5,7 +5,7 @@ type FeaturesSectionProps = {
 const FeaturesSection = ({ className = '' }: FeaturesSectionProps) => {
   return (
     <div className={`grid md:grid-cols-3 gap-6 ${className}`.trim()}>
-      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
         <div className="text-4xl mb-4">🌍</div>
         <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
           Global Coverage
@@ -15,7 +15,7 @@ const FeaturesSection = ({ className = '' }: FeaturesSectionProps) => {
         </p>
       </div>
 
-      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
         <div className="text-4xl mb-4">📊</div>
         <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
           Detailed Metrics
@@ -25,7 +25,7 @@ const FeaturesSection = ({ className = '' }: FeaturesSectionProps) => {
         </p>
       </div>
 
-      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+      <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
         <div className="text-4xl mb-4">🌓</div>
         <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Theme</h3>
         <p className="text-gray-600 dark:text-gray-400">
