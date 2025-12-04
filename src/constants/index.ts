@@ -1,4 +1,5 @@
-const WEATHER_IMAGE = '/images/weather.png';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://quickweathercheck.netlify.app';
+const WEATHER_IMAGE = `${SITE_URL}/images/weather.png`;
 const FAVICON_ICON = '/favicon/weather.ico';
 const SEARCH_ICON = '/images/icons/search-icon.svg';
 const MOON_ICON = '/images/icons/moon-icon.svg';
