@@ -22,7 +22,7 @@ export const generateMetadata = async ({ searchParams }: SearchParamsProps): Pro
         description: 'Search for weather information by city name',
         type: 'website',
         locale: 'en_US',
-        siteName: 'Weather App',
+        siteName: 'WeatherNow',
         images: [
           {
             url: WEATHER_IMAGE,
@@ -56,7 +56,7 @@ export const generateMetadata = async ({ searchParams }: SearchParamsProps): Pro
       description: `View current weather information for ${capitalizeFirstLetter(city)}`,
       type: 'website',
       locale: 'en_US',
-      siteName: 'Weather App',
+      siteName: 'WeatherNow',
       images: [
         {
           url: WEATHER_IMAGE,

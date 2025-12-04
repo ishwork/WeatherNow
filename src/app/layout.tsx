@@ -8,7 +8,7 @@ import ThemeProvider from '@/components/ThemeProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
-  title: 'Weather App',
+  title: 'WeatherNow',
   description: 'Search for weather information by city name',
 };
 

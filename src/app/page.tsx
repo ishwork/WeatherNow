@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Search for weather information by city name',
     type: 'website',
     locale: 'en_US',
-    siteName: 'Weather App',
+    siteName: 'WeatherNow',
     images: [
       {
         url: WEATHER_IMAGE,
@@ -37,6 +37,6 @@ export const metadata: Metadata = {
   },
 };
 
-const Home = () => <HomePageWeather />;
+const HomePage = () => <HomePageWeather />;
 
-export default Home;
+export default HomePage;
