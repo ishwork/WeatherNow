@@ -37,7 +37,7 @@ const HomePageWeather = () => {
   }
 
   return (
-    <div className="min-h-screen p-8 max-w-4xl mx-auto">
+    <div className="min-h-screen p-4 mobile:p-8 max-w-4xl mx-auto">
       {/* Welcome Section */}
       <h1 className="text-center mb-8 text-gray-600 dark:text-gray-400">
         {locationError ? 'Showing weather for default city' : 'Weather in your city'}

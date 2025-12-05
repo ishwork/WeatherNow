@@ -62,7 +62,7 @@ const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
   }, [searchParams]);
 
   return (
-    <div className="min-h-screen p-8 max-w-2xl mx-auto">
+    <div className="min-h-screen p-4 mobile:p-8 max-w-2xl mx-auto">
       {/* Search Form */}
       <form onSubmit={handleSearch} className="mb-8">
         <div className="flex gap-2">
