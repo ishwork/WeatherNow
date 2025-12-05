@@ -5,11 +5,7 @@ import { useSelector } from 'react-redux';
 
 import type { RootState } from '@/store';
 
-const ThemeProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-})  => {
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const theme = useSelector((state: RootState) => state.theme.mode);
 
   useEffect(() => {
@@ -19,6 +15,6 @@ const ThemeProvider = ({
   }, [theme]);
 
   return <>{children}</>;
-}
+};
 
 export default ThemeProvider;

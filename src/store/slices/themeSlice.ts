@@ -4,7 +4,7 @@ type Theme = 'light' | 'dark';
 
 type ThemeState = {
   mode: Theme;
-}
+};
 
 const initialState: ThemeState = {
   mode: 'light',

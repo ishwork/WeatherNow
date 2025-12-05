@@ -21,4 +21,4 @@ export type WeatherData = {
   clouds: {
     all: number;
   };
-}
+};
