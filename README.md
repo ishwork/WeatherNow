@@ -12,6 +12,7 @@ A real-time weather application built with Next.js 16 App Router that provides a
 - **Redux Toolkit Integration**: Efficient state management with RTK Query for API calls
 - **Type-Safe**: Built with TypeScript for better development experience
 - **Modern UI**: Clean and intuitive interface with Tailwind CSS
+- **Docker Support**: Easily run and develop the app in containers using the provided Dockerfile
 
 ## 🌐 Live Demo
 
