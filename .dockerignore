@@ -1,0 +1,21 @@
+# VCS
+.git
+.gitignore
+
+# Node
+node_modules
+
+# Build output
+.next
+
+# Env & secrets
+.env
+.env.*
+
+# IDE
+.vscode
+.idea
+
+# MISC
+.DS_Store
+README.md
