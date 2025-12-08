@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "eslint": "eslint .",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md,mjs}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md,mjs}\"",
+    "test:audit": "npm audit --audit-level=high"
   },
   "dependencies": {
     "@reduxjs/toolkit": "2.5.0",
