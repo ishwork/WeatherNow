@@ -4,6 +4,8 @@ import { WeatherData } from '@/types';
 // Get API key from environment variable
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
+// console.log('Weather API Key:', API_KEY);
+
 export const weatherApi = createApi({
   reducerPath: 'weatherApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.openweathermap.org/data/2.5/' }),
