@@ -22,3 +22,44 @@ export type WeatherData = {
     all: number;
   };
 };
+
+export type FiveDayForecastResponse = {
+  cod: string;
+  message: number;
+  cnt: number;
+  list: Array<{
+    dt: number;
+    dt_txt: string;
+    main: {
+      temp: number;
+    };
+    weather: Array<{
+      main: string;
+      description: string;
+      icon: string;
+    }>;
+  }>;
+  city: {
+    id: number;
+    name: string;
+    country: string;
+  };
+};
+
+// Group forecast by day
+export type ForecastItem = {
+  dt: number;
+  dt_txt: string;
+  main: {
+    temp: number;
+  };
+  weather: Array<{
+    main: string;
+    description: string;
+    icon: string;
+  }>;
+};
+
+export type DailyForecast = {
+  [date: string]: ForecastItem[];
+};
