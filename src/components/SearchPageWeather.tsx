@@ -2,10 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+
 import { useGetWeatherByCityQuery } from '@/store/api/weatherApi';
-import CityNotFound from './CityNotFound';
-import LoadingSpinner from './LoadingSpinner';
-import WeatherCard from './WeatherCard';
+
+import CityNotFound from '@/components/CityNotFound';
+import FiveDayForecast from '@/components/FiveDayForecast';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import WeatherCard from '@/components/WeatherCard';
 
 const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
   const router = useRouter();
@@ -90,7 +93,19 @@ const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
       {error && !isLoading && !isFetching && searchCity && <CityNotFound cityName={searchCity} />}
 
       {/* Weather Data */}
-      {data && !isLoading && !isFetching && searchCity && !error && <WeatherCard data={data} />}
+      {data && !isLoading && !isFetching && searchCity && !error && (
+        <>
+          <WeatherCard data={data} />
+          {/* 5-Day Forecast Section */}
+          <div className="mt-8">
+            <div className="border-t border-gray-300 dark:border-gray-700 my-8" />
+            <div>
+              {/* FiveDayForecast component shows 5-day forecast prediction below current weather */}
+              <FiveDayForecast city={searchCity} />
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Initial State */}
       {!searchCity && !isLoading && !error && (

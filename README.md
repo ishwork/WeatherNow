@@ -5,6 +5,7 @@ A real-time weather application built with Next.js 16 App Router that provides a
 ## Features
 
 - **Real-time Weather Data**: Get current weather information powered by OpenWeatherMap API
+- **5-Day Forecast**: View a 5-day weather forecast for any city
 - **Auto Location Detection**: Automatically detects your location and shows local weather
 - **City Search**: Search for weather information in any city worldwide
 - **Dark/Light Theme**: Toggle between dark and light modes

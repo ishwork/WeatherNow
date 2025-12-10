@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { WeatherData } from '@/types';
+
+import type { WeatherData, FiveDayForecastResponse } from '@/types';
 
 // Get API key from environment variable
 const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
@@ -12,7 +13,10 @@ export const weatherApi = createApi({
     getWeatherByCity: builder.query<WeatherData, string>({
       query: (city) => `weather?q=${city}&appid=${API_KEY}&units=metric`,
     }),
+    getFiveDayForecast: builder.query<FiveDayForecastResponse, string>({
+      query: (city) => `forecast?q=${city}&appid=${API_KEY}&units=metric`,
+    }),
   }),
 });
 
-export const { useGetWeatherByCityQuery } = weatherApi;
+export const { useGetWeatherByCityQuery, useGetFiveDayForecastQuery } = weatherApi;
