@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { useGetWeatherByCityQuery } from '@/store/api/weatherApi';
 import { useGetUserLocation } from '@/hooks/useGetUserLocation';
 
-import CityNotFound from './CityNotFound';
-import FeaturesSection from './FeaturesSection';
-import LoadingSpinner from './LoadingSpinner';
-import WeatherCard from './WeatherCard';
+import CityNotFound from '@/components/CityNotFound';
+import FeaturesSection from '@/components/FeaturesSection';
+import FiveDayForecast from '@/components/FiveDayForecast';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import WeatherCard from '@/components/WeatherCard';
 
 const HomePageWeather = () => {
   const { city, locationError, isLoading: isLoadingLocation } = useGetUserLocation('Espoo');
@@ -45,6 +46,9 @@ const HomePageWeather = () => {
 
       {/* Weather Card */}
       <WeatherCard data={data} />
+
+      {/* Five-Day Forecast Section */}
+      <FiveDayForecast city={city} />
 
       {/* Features Section */}
       <FeaturesSection className="mt-8 mb-8" />
