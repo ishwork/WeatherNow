@@ -37,6 +37,12 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Server component for the homepage.
+ * Renders the main weather UI for the user's city using HomePageWeather.
+ * @returns JSX element for the homepage weather view
+ */
+
 const HomePage = () => <HomePageWeather />;
 
 export default HomePage;

@@ -82,6 +82,12 @@ export const generateMetadata = async ({ searchParams }: SearchParamsProps): Pro
   };
 };
 
+/**
+ * Async server component for search page.
+ * @param {SearchParamsProps} params - Object containing searchParams Promise
+ * @returns JSX element rendering SearchPageWeather for the initial city
+ */
+
 const SearchPage = async ({ searchParams }: SearchParamsProps) => {
   const { city } = await searchParams;
 
