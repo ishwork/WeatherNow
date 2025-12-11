@@ -8,6 +8,7 @@ A real-time weather application built with Next.js 16 App Router that provides a
 - **5-Day Forecast**: View a 5-day weather forecast for any city
 - **Auto Location Detection**: Automatically detects your location and shows local weather
 - **City Search**: Search for weather information in any city worldwide
+- **Popular Cities Dropdown**: Quickly view weather for 10 popular Finnish cities using a convenient dropdown on the homepage
 - **Dark/Light Theme**: Toggle between dark and light modes
 - **Responsive Design**: Fully responsive design that works on all devices
 - **Redux Toolkit Integration**: Efficient state management with RTK Query for API calls

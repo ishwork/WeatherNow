@@ -1,9 +1,12 @@
 'use client';
 
+import React, { useState, useCallback, ChangeEvent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { useGetWeatherByCityQuery } from '@/store/api/weatherApi';
 import { useGetUserLocation } from '@/hooks/useGetUserLocation';
+import { CITIES_OPTIONS } from '@/constants';
 
 import CityNotFound from '@/components/CityNotFound';
 import FeaturesSection from '@/components/FeaturesSection';
@@ -16,6 +19,19 @@ const HomePageWeather = () => {
   const { data, error, isLoading } = useGetWeatherByCityQuery(city, {
     skip: !city,
   });
+
+  // Dropdown for navigation only
+  const [dropdownCity, setDropdownCity] = useState(city);
+  const router = useRouter();
+
+  const handleDropdownChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      const newCity = e.target.value;
+      setDropdownCity(newCity);
+      router.push(`/city/${encodeURIComponent(newCity)}`);
+    },
+    [router],
+  );
 
   if (isLoading || isLoadingLocation) {
     return (
@@ -52,6 +68,24 @@ const HomePageWeather = () => {
 
       {/* Features Section */}
       <FeaturesSection className="mt-8 mb-8" />
+
+      {/* Dropdown to select popular cities in Finland and navigate to their weather pages */}
+      <div className="flex flex-col items-center mb-6">
+        <span className="mb-2  dark:text-blue-300 font-semibold">
+          See weather condition in popular cities in Finland
+        </span>
+        <select
+          value={dropdownCity}
+          onChange={handleDropdownChange}
+          className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200"
+        >
+          {CITIES_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className="text-center">
         <Link
