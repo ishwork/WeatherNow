@@ -8,6 +8,19 @@ const SETTINGS_ICON = '/images/icons/settings-icon.svg';
 const CLOSE_ICON = '/images/icons/close-icon.svg';
 const TICK_ICON = '/images/icons/tick-icon.svg';
 
+const CITIES_OPTIONS = [
+  'Helsinki',
+  'Espoo',
+  'Tampere',
+  'Vantaa',
+  'Oulu',
+  'Turku',
+  'Jyväskylä',
+  'Lahti',
+  'Kuopio',
+  'Pori',
+];
+
 export {
   WEATHER_IMAGE,
   FAVICON_ICON,
@@ -17,4 +30,5 @@ export {
   SETTINGS_ICON,
   CLOSE_ICON,
   TICK_ICON,
+  CITIES_OPTIONS,
 };
