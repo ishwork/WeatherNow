@@ -71,12 +71,14 @@ const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
         <div className="flex gap-2">
           <input
             type="text"
+            data-testid="city-input"
             value={city}
             onChange={handleInputChange}
             placeholder="Enter city name..."
             className="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 text-gray-900 dark:text-white bg-white dark:bg-gray-800 placeholder:text-gray-500 dark:placeholder:text-gray-400"
           />
           <button
+            data-testid="search-button"
             type="submit"
             disabled={!city.trim() || isLoading}
             className="px-6 py-3 bg-blue-400 dark:bg-blue-600 text-white rounded-lg hover:bg-blue-600 dark:hover:bg-blue-700 disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors"
