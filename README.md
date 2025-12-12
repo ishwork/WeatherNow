@@ -15,6 +15,7 @@ A real-time weather application built with Next.js 16 App Router that provides a
 - **Type-Safe**: Built with TypeScript for better development experience
 - **Modern UI**: Clean and intuitive interface with Tailwind CSS
 - **Docker Support**: Easily run and develop the app in containers using the provided Dockerfile
+- **End-to-End Tested**: Includes Playwright tests for simulating real user interactions in a browser.
 
 ## 🌐 Live Demo
 
@@ -90,6 +91,45 @@ This project uses RTK Query for **client-side data fetching** that depends on cl
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
+
+## 🧪 End-to-End Testing with Playwright
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end (E2E) testing.
+
+### Running Playwright Tests
+
+1. Install dependencies (if not already done):
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+2. Run all E2E tests:
+
+   ```bash
+   npx playwright test
+   ```
+
+   Or to run a specific test file (e.g., search page):
+
+   ```bash
+   npx playwright test tests/playwright/search.spec.ts
+   ```
+
+   To run with a single worker:
+
+   ```bash
+   npx playwright test --workers=1
+   ```
+
+3. View Playwright HTML report:
+   ```bash
+   npx playwright show-report
+   ```
+
+Playwright tests are located in the `tests/playwright/` directory.
 
 ## Acknowledgments
 

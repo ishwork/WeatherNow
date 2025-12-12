@@ -6,7 +6,10 @@ type WeatherCardProps = {
 
 const WeatherCard = ({ data }: WeatherCardProps) => {
   return (
-    <div className="bg-gradient-to-br from-sky-300 to-blue-500 rounded-2xl shadow-2xl p-4 mobile:p-8 text-white">
+    <div
+      data-testid="weather-card"
+      className="bg-gradient-to-br from-sky-300 to-blue-500 rounded-2xl shadow-2xl p-4 mobile:p-8 text-white"
+    >
       <div className="text-center mb-6">
         <h2 className="text-3xl font-bold">
           {data.name}, {data.sys.country}

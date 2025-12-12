@@ -25,7 +25,7 @@ const FiveDayForecast = ({ city }: { city: string }) => {
   if (!data || !data.list) return null;
 
   return (
-    <div className="mt-8">
+    <div data-testid="five-day-forecast" className="mt-8">
       <h2 className="text-xl font-semibold mb-4">5-Day Forecast</h2>
       <div className="flex overflow-x-auto gap-4 mobile:grid mobile:grid-cols-5 mobile:overflow-x-visible">
         {days.map((date) => {
