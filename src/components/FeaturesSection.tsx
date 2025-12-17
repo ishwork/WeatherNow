@@ -1,10 +1,12 @@
+import cn, { ClassValue } from '@/libs/styles/utils';
+
 type FeaturesSectionProps = {
-  className?: string;
+  className?: ClassValue;
 };
 
 const FeaturesSection = ({ className = '' }: FeaturesSectionProps) => {
   return (
-    <div className={`grid md:grid-cols-3 gap-6 ${className}`.trim()}>
+    <div className={cn('grid md:grid-cols-3 gap-6', className)}>
       <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-center">
         <div className="text-4xl mb-4">🌍</div>
         <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
