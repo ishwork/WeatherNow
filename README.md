@@ -84,6 +84,21 @@ This project uses RTK Query for **client-side data fetching** that depends on cl
 - **Simplified Code**: Eliminates the need for manual `useEffect`, `useState`, and error handling logic
 - **Request Deduplication**: Multiple components requesting the same data trigger only one network request
 
+## Utility Function
+
+- **Tailwind Merge with `cn` Utility**: The project uses a custom `cn` function that combines [clsx](https://github.com/lukeed/clsx) and [tailwind-merge](https://github.com/dcastil/tailwind-merge) to intelligently merge Tailwind CSS class names and resolve conflicts. This utility ensures that conditional and dynamic class names are handled cleanly and that only the correct Tailwind classes are applied.
+
+**Usage Example:**
+
+```typescript
+import cn from 'src/libs/styles/utils';
+
+<div className={cn('p-4', isDark && 'bg-black', 'bg-white')} />
+// Results in: 'p-4 bg-black' if isDark is true, otherwise 'p-4 bg-white'
+```
+
+This helps keep components clean and avoid Tailwind class conflicts.
+
 ## 📝 Available Scripts
 
 - `npm run dev` - Start development server
