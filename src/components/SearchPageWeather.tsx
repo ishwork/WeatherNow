@@ -2,13 +2,19 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 import { useGetWeatherByCityQuery } from '@/store/api/weatherApi';
 
-import CityNotFound from '@/components/CityNotFound';
+import ComponentLoadingFallback from '@/components/ComponentLoadingFallback';
 import FiveDayForecast from '@/components/FiveDayForecast';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import WeatherCard from '@/components/WeatherCard';
+
+// Lazy-load error component - only needed on failed searches
+const CityNotFound = dynamic(() => import('@/components/CityNotFound'), {
+  loading: () => <ComponentLoadingFallback />,
+});
 
 const SearchPageWeather = ({ initialCity }: { initialCity?: string }) => {
   const router = useRouter();

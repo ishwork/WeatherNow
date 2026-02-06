@@ -3,16 +3,29 @@
 import React, { useState, useCallback, ChangeEvent } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
 
 import { useGetWeatherByCityQuery } from '@/store/api/weatherApi';
 import { useGetUserLocation } from '@/hooks/useGetUserLocation';
 import { CITIES_OPTIONS } from '@/constants';
 
-import CityNotFound from '@/components/CityNotFound';
-import FeaturesSection from '@/components/FeaturesSection';
+import ComponentLoadingFallback from '@/components/ComponentLoadingFallback';
 import FiveDayForecast from '@/components/FiveDayForecast';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import WeatherCard from '@/components/WeatherCard';
+
+// Lazy-load components to laod only when needed, improving initial load performance
+const CityNotFound = dynamic(() => import('@/components/CityNotFound'), {
+  loading: () => <ComponentLoadingFallback />,
+});
+
+const FeaturesSection = dynamic(() => import('@/components/FeaturesSection'), {
+  loading: () => <ComponentLoadingFallback />,
+});
+
+const CityDropdown = dynamic(() => import('@/components/CityDropdown'), {
+  loading: () => <ComponentLoadingFallback />,
+});
 
 const HomePageWeather = () => {
   const { city, locationError, isLoading: isLoadingLocation } = useGetUserLocation('Espoo');
@@ -70,34 +83,11 @@ const HomePageWeather = () => {
       <FeaturesSection className="mt-8 mb-8" />
 
       {/* Dropdown to select popular cities in Finland and navigate to their weather pages */}
-      <div className="flex flex-col items-center mb-6">
-        <span className="mb-2 dark:text-blue-300 font-semibold">
-          See weather condition in popular cities in Finland
-        </span>
-        <div className="flex flex-row gap-3 w-full justify-center">
-          <select
-            value={dropdownCity}
-            onChange={handleDropdownChange}
-            className="px-4 py-2 rounded border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200"
-          >
-            {CITIES_OPTIONS.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-          <button
-            type="button"
-            className="px-4 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded hover:bg-blue-700 transition"
-            onClick={() => {
-              setDropdownCity(CITIES_OPTIONS[0]);
-              router.push(`/city/${encodeURIComponent(CITIES_OPTIONS[0])}`);
-            }}
-          >
-            See for {CITIES_OPTIONS[0]}
-          </button>
-        </div>
-      </div>
+      <CityDropdown
+        cities={CITIES_OPTIONS}
+        selectedCity={dropdownCity}
+        onCityChange={handleDropdownChange}
+      />
 
       <div className="text-center">
         <Link
