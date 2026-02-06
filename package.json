@@ -10,7 +10,8 @@
     "eslint": "eslint .",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md,mjs}\"",
     "test:audit": "npm audit --audit-level=high",
-    "e2e-test": "playwright test --project=chromium"
+    "e2e-test": "playwright test --project=chromium",
+    "analyze": "ANALYZE=true npm run build -- --webpack"
   },
   "dependencies": {
     "@reduxjs/toolkit": "2.5.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.2.0",
     "@eslint/js": "^9.39.1",
+    "@next/bundle-analyzer": "^16.1.6",
     "@playwright/test": "^1.57.0",
     "@types/node": "20.17.9",
     "@types/react": "19.0.2",
