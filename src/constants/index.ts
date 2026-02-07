@@ -7,6 +7,11 @@ const SUN_ICON = '/images/icons/sun-icon.svg';
 const SETTINGS_ICON = '/images/icons/settings-icon.svg';
 const CLOSE_ICON = '/images/icons/close-icon.svg';
 const TICK_ICON = '/images/icons/tick-icon.svg';
+const SHARE_ICON = '/images/icons/share-icon.svg';
+const FACEBOOK_ICON = '/images/icons/facebook-icon.svg';
+const WHATSAPP_ICON = '/images/icons/whatsapp-icon.svg';
+const INSTAGRAM_ICON = '/images/icons/instagram-icon.svg';
+const TIKTOK_ICON = '/images/icons/tiktok-icon.svg';
 
 const CITIES_OPTIONS = [
   'Helsinki',
@@ -22,6 +27,7 @@ const CITIES_OPTIONS = [
 ];
 
 export {
+  SITE_URL,
   WEATHER_IMAGE,
   FAVICON_ICON,
   SEARCH_ICON,
@@ -30,5 +36,10 @@ export {
   SETTINGS_ICON,
   CLOSE_ICON,
   TICK_ICON,
+  SHARE_ICON,
+  FACEBOOK_ICON,
+  WHATSAPP_ICON,
+  INSTAGRAM_ICON,
+  TIKTOK_ICON,
   CITIES_OPTIONS,
 };
