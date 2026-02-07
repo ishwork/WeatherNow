@@ -1,21 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useSelector, useDispatch } from 'react-redux';
 
-import { SEARCH_ICON, MOON_ICON, SUN_ICON, SETTINGS_ICON } from '@/constants';
-import { toggleTheme } from '@/store/slices/themeSlice';
-import type { RootState } from '@/store';
+import { SEARCH_ICON, SETTINGS_ICON } from '@/constants';
 
 import SettingsPanel from '@/components/SettingsPanel';
+import SharePopover from '@/components/SharePopover';
 
 const Header = () => {
   const pathname = usePathname();
-  const dispatch = useDispatch();
-  const theme = useSelector((state: RootState) => state.theme.mode);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   return (
@@ -51,33 +47,10 @@ const Header = () => {
               />
             </Link>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={() => dispatch(toggleTheme())}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-400"
-              aria-label="Toggle theme"
-              title="Toggle Theme"
-            >
-              {theme === 'light' ? (
-                <Image
-                  width={24}
-                  height={24}
-                  data-testid="moon-icon"
-                  aria-label="Moon icon"
-                  alt="Dark mode theme toggle"
-                  src={MOON_ICON}
-                />
-              ) : (
-                <Image
-                  width={24}
-                  height={24}
-                  data-testid="sun-icon"
-                  aria-label="Sun icon"
-                  alt="Light mode theme toggle"
-                  src={SUN_ICON}
-                />
-              )}
-            </button>
+            {/* Share */}
+            <Suspense fallback={<div className="w-10 h-10" />}>
+              <SharePopover />
+            </Suspense>
 
             {/* Settings Button */}
             <button
